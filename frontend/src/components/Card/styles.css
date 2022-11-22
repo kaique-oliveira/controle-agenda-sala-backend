@@ -1,0 +1,40 @@
+.card{
+    height: 70px;
+    width: 90%;
+
+    background-color: #161729;
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.card div{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: transparent;
+}
+
+.card strong{
+    font-size: 18px;
+    font-weight: 400;
+
+    background-color: transparent;
+    color: #FF2E00;
+}
+
+.card small{
+    font-size: 14px;
+    font-weight: 300;
+
+    background-color: transparent;
+    color: aliceblue;
+}
