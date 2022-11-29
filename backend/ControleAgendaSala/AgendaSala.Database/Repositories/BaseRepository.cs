@@ -3,7 +3,7 @@ using NHibernate;
 
 namespace AgendaSala.Database.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : class
+    public class BaseRepository<T> : IBaseCrud<T> where T : class
     {
         private readonly INpgSqlConnection _connection;
 

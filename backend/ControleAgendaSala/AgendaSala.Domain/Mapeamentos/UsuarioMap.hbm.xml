@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="AgendaSala.Domain.Entidades" assembly="AgendaSala.Domain">
+
+	<class name="Usuario" lazy="false" table="tbl_usuario" >
+		
+		<id name="Id" column="id" type="int">
+			<generator class="native" />
+		</id>
+
+		<property name="Nome"			column="nome"		 type="string" length="150" />
+		<property name="Email"			column="email"		 type="string" length="150" />
+		<property name="Senha"			column="senha"		 type="string" length="10" />
+		<property name="TipoUsuario"	column="tipo_usuario" type="string" length="15" />
+
+		<many-to-one name="Setor"
+					 class="Setor"
+					 column="idSetor"
+					 fetch="join"
+					 foreign-key="tbl_usuario_idsetor_fkey"/>
+
+	</class>
+</hibernate-mapping>

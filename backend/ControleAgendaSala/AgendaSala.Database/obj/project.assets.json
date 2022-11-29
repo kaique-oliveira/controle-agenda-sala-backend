@@ -18,6 +18,31 @@
           }
         }
       },
+      "Castle.Core/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Castle.DynamicProxy.dll/1.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/2.0/Castle.DynamicProxy.dll": {}
+        },
+        "runtime": {
+          "lib/2.0/Castle.DynamicProxy.dll": {}
+        }
+      },
       "FluentNHibernate/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -49,6 +74,20 @@
           "lib/netstandard1.3/Iesi.Collections.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "LinFu.DynamicProxy/2.1.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/LinFu.DynamicProxy.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LinFu.DynamicProxy.dll": {}
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
@@ -213,6 +252,23 @@
         "runtime": {
           "lib/net6.0/NHibernate.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "NHibernate.ByteCode.Castle/3.3.3.4000": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "[3.2.0, 3.3.0)",
+          "NHibernate": "[3.3.3, 3.3.4)"
+        },
+        "compile": {
+          "lib/net35/NHibernate.ByteCode.Castle.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net35/NHibernate.ByteCode.Castle.dll": {
+            "related": ".pdb"
           }
         }
       },
@@ -649,6 +705,32 @@
           }
         }
       },
+      "System.Diagnostics.EventLog/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          },
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Diagnostics.Tools/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1049,7 +1131,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {
+          "ref/netstandard1.1/System.Reflection.Emit.dll": {
             "related": ".xml"
           }
         },
@@ -1065,7 +1147,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {
             "related": ".xml"
           }
         },
@@ -1082,7 +1164,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
+          "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll": {
             "related": ".xml"
           }
         },
@@ -1776,8 +1858,12 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Castle.Core": "5.1.0",
+          "Castle.DynamicProxy.dll": "1.1.5",
           "FluentNHibernate": "3.1.0",
+          "LinFu.DynamicProxy": "2.1.2",
           "NHibernate": "5.4.0",
+          "NHibernate.ByteCode.Castle": "3.3.3.4000",
           "Npgsql": "7.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
@@ -1808,6 +1894,42 @@
         "lib/netstandard1.1/Antlr3.Runtime.xml",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr3.Runtime.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr3.Runtime.xml"
+      ]
+    },
+    "Castle.Core/5.1.0": {
+      "sha512": "31UJpTHOiWq95CDOHazE3Ub/hE/PydNWsJMwnEVTqFFP4WhAugwpaVGxzOxKgNeSUUeqS2W6lxV+q7u1pAOfXg==",
+      "type": "package",
+      "path": "castle.core/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ASL - Apache Software Foundation License.txt",
+        "CHANGELOG.md",
+        "LICENSE",
+        "castle-logo.png",
+        "castle.core.5.1.0.nupkg.sha512",
+        "castle.core.nuspec",
+        "lib/net462/Castle.Core.dll",
+        "lib/net462/Castle.Core.xml",
+        "lib/net6.0/Castle.Core.dll",
+        "lib/net6.0/Castle.Core.xml",
+        "lib/netstandard2.0/Castle.Core.dll",
+        "lib/netstandard2.0/Castle.Core.xml",
+        "lib/netstandard2.1/Castle.Core.dll",
+        "lib/netstandard2.1/Castle.Core.xml",
+        "readme.txt"
+      ]
+    },
+    "Castle.DynamicProxy.dll/1.1.5": {
+      "sha512": "htDsjC/U+3jTfVimowhPqFkPNgIB9LFT77jEXHotpjA21dtWg76NZMTfI/Dwn++LclaGXDat/ghy7DrKbxgppA==",
+      "type": "package",
+      "path": "castle.dynamicproxy.dll/1.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "castle.dynamicproxy.dll.1.1.5.nupkg.sha512",
+        "castle.dynamicproxy.dll.nuspec",
+        "lib/2.0/Castle.DynamicProxy.dll"
       ]
     },
     "FluentNHibernate/3.1.0": {
@@ -1848,6 +1970,18 @@
         "lib/netstandard1.0/Iesi.Collections.xml",
         "lib/netstandard1.3/Iesi.Collections.dll",
         "lib/netstandard1.3/Iesi.Collections.xml"
+      ]
+    },
+    "LinFu.DynamicProxy/2.1.2": {
+      "sha512": "D+LFDhjzD/r5TIJfXpfbUxMHXncgPuasnaZbaCOZ9gTvWgkW6w8OdfzASFFsPw5KEDgC+HhZa5A5yuRESdTL9w==",
+      "type": "package",
+      "path": "linfu.dynamicproxy/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/LinFu.DynamicProxy.dll",
+        "linfu.dynamicproxy.2.1.2.nupkg.sha512",
+        "linfu.dynamicproxy.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
@@ -2098,6 +2232,19 @@
         "nhibernate-mapping.xsd",
         "nhibernate.5.4.0.nupkg.sha512",
         "nhibernate.nuspec"
+      ]
+    },
+    "NHibernate.ByteCode.Castle/3.3.3.4000": {
+      "sha512": "gsuVGtHvHeLERI8ONDLzdjwgH5X++WGKjevtpl0twEr2gg4QK1a85IUBqQgKtn/QlCfJaPk4h4k6TtvkDgT9Mw==",
+      "type": "package",
+      "path": "nhibernate.bytecode.castle/3.3.3.4000",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/NHibernate.ByteCode.Castle.dll",
+        "lib/net35/NHibernate.ByteCode.Castle.pdb",
+        "nhibernate.bytecode.castle.3.3.3.4000.nupkg.sha512",
+        "nhibernate.bytecode.castle.nuspec"
       ]
     },
     "Npgsql/7.0.0": {
@@ -2896,6 +3043,37 @@
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
         "system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec"
+      ]
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "sha512": "lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "type": "package",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Diagnostics.EventLog.dll",
+        "lib/net461/System.Diagnostics.EventLog.xml",
+        "lib/net6.0/System.Diagnostics.EventLog.dll",
+        "lib/net6.0/System.Diagnostics.EventLog.xml",
+        "lib/netcoreapp3.1/System.Diagnostics.EventLog.dll",
+        "lib/netcoreapp3.1/System.Diagnostics.EventLog.xml",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.xml",
+        "system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+        "system.diagnostics.eventlog.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Diagnostics.Tools/4.3.0": {
@@ -5933,26 +6111,35 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AgendaSala.Domain >= 1.0.0",
+      "Castle.Core >= 5.1.0",
+      "Castle.DynamicProxy.dll >= 1.1.5",
       "FluentNHibernate >= 3.1.0",
+      "LinFu.DynamicProxy >= 2.1.2",
       "NHibernate >= 5.4.0",
+      "NHibernate.ByteCode.Castle >= 3.3.3.4000",
       "Npgsql >= 7.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Interfocus\\.nuget\\packages\\": {}
+    "C:\\Users\\kaique\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
+      "projectUniqueName": "C:\\Users\\kaique\\Desktop\\projects\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
       "projectName": "AgendaSala.Database",
-      "projectPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
-      "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\obj\\",
+      "projectPath": "C:\\Users\\kaique\\Desktop\\projects\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
+      "packagesPath": "C:\\Users\\kaique\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kaique\\Desktop\\projects\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5966,8 +6153,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
-              "projectPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
+            "C:\\Users\\kaique\\Desktop\\projects\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
+              "projectPath": "C:\\Users\\kaique\\Desktop\\projects\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
             }
           }
         }
@@ -5982,13 +6169,29 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Castle.Core": {
+            "target": "Package",
+            "version": "[5.1.0, )"
+          },
+          "Castle.DynamicProxy.dll": {
+            "target": "Package",
+            "version": "[1.1.5, )"
+          },
           "FluentNHibernate": {
             "target": "Package",
             "version": "[3.1.0, )"
           },
+          "LinFu.DynamicProxy": {
+            "target": "Package",
+            "version": "[2.1.2, )"
+          },
           "NHibernate": {
             "target": "Package",
             "version": "[5.4.0, )"
+          },
+          "NHibernate.ByteCode.Castle": {
+            "target": "Package",
+            "version": "[3.3.3.4000, )"
           },
           "Npgsql": {
             "target": "Package",
@@ -6015,8 +6218,50 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: NHibernate.ByteCode.Castle 3.3.3.4000 requires NHibernate (>= 3.3.3 && < 3.3.4) but version NHibernate 5.4.0 was resolved.",
+      "libraryId": "NHibernate",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: NHibernate.ByteCode.Castle 3.3.3.4000 requires Castle.Core (>= 3.2.0 && < 3.3.0) but version Castle.Core 5.1.0 was resolved.",
+      "libraryId": "Castle.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Castle.DynamicProxy.dll 1.1.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Castle.DynamicProxy.dll",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NHibernate.ByteCode.Castle 3.3.3.4000' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NHibernate.ByteCode.Castle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

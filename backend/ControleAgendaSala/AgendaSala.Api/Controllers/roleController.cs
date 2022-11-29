@@ -1,6 +1,6 @@
 ﻿using AgendaSala.Database.Interface;
 using AgendaSala.Database.Repositories;
-using AgendaSala.Domain.Entities;
+using AgendaSala.Domain.Entidades;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaSala.Api.Controllers
@@ -9,20 +9,19 @@ namespace AgendaSala.Api.Controllers
     [Route("[controller]")]
     public class roleController : ControllerBase
     {
-        private readonly IRoleRepository _roleRepository;
-        private readonly INpgSqlConnection npgSqlConnection;
+        private readonly IRoleCrud _roleRepository;
 
-        public roleController(IRoleRepository roleRepository, INpgSqlConnection npgSqlConnection)
+        public roleController(IRoleCrud roleRepository)
         {
             _roleRepository = roleRepository;
-            this.npgSqlConnection=npgSqlConnection;
+
         }
 
         [HttpPost]
         [Route("insert")]
-        public async Task<ActionResult<dynamic>> Post([FromBody] Role _role)
+        public async Task<ActionResult<dynamic>> Post([FromBody] Setor _role)
         {
-            npgSqlConnection.CreateSession();
+
             _roleRepository.Insert(_role);
 
             return Ok(201);

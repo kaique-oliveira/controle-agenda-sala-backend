@@ -1,9 +1,9 @@
 ﻿using AgendaSala.Database.Interface;
-using AgendaSala.Domain.Entities;
+using AgendaSala.Domain.Entidades;
 
 namespace AgendaSala.Database.Repositories
 {
-    public class RoomRepository : BaseRepository<Room>, IRoomRepository
+    public class RoomRepository : BaseRepository<Sala>, IRoomCrud
     {
         public RoomRepository(INpgSqlConnection connection) : base(connection)
         {

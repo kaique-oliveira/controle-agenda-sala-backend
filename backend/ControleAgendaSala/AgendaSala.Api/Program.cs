@@ -5,11 +5,11 @@ using AgendaSala.Database.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<INpgSqlConnection, NpgSqlConnection>();
-builder.Services.AddSingleton<IEventRepository, EventRepository>();
-builder.Services.AddSingleton<IRoleRepository,  RoleRepository>();
-builder.Services.AddSingleton<IRoomRepository,  RoomRepository>();
-builder.Services.AddScoped<IUserRepository,  UserRepository>();
+builder.Services.AddScoped<INpgSqlConnection, NpgSqlConnection>();
+builder.Services.AddScoped<IEventCrud, EventRepository>();
+builder.Services.AddScoped<IRoleCrud,  RoleRepository>();
+builder.Services.AddScoped<IRoomCrud,  RoomRepository>();
+builder.Services.AddScoped<IUserCrud,  UserRepository>();
 
 
 

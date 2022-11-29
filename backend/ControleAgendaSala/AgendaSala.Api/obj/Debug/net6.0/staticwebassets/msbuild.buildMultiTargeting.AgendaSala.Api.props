@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AgendaSala.Api.props" />
+</Project>

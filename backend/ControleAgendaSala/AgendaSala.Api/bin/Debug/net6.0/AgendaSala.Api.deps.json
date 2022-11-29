@@ -10,8 +10,12 @@
         "dependencies": {
           "AgendaSala.Database": "1.0.0",
           "AgendaSala.Domain": "1.0.0",
+          "Castle.Core": "5.1.0",
+          "Castle.DynamicProxy.dll": "1.1.5",
           "FluentNHibernate": "3.1.0",
+          "LinFu.DynamicProxy": "2.1.2",
           "NHibernate": "5.4.0",
+          "NHibernate.ByteCode.Castle": "3.3.3.4000",
           "Npgsql": "7.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
@@ -27,6 +31,25 @@
           "lib/netstandard1.1/Antlr3.Runtime.dll": {
             "assemblyVersion": "3.5.0.2",
             "fileVersion": "3.5.1.0"
+          }
+        }
+      },
+      "Castle.Core/5.1.0": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.0.0"
+          }
+        }
+      },
+      "Castle.DynamicProxy.dll/1.1.5": {
+        "runtime": {
+          "lib/2.0/Castle.DynamicProxy.dll": {
+            "assemblyVersion": "1.1.5.0",
+            "fileVersion": "1.1.5.0"
           }
         }
       },
@@ -50,6 +73,19 @@
           "lib/netstandard1.3/Iesi.Collections.dll": {
             "assemblyVersion": "4.0.0.4000",
             "fileVersion": "4.0.4.0"
+          }
+        }
+      },
+      "LinFu.DynamicProxy/2.1.2": {
+        "dependencies": {
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/LinFu.DynamicProxy.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -145,6 +181,18 @@
           "lib/net6.0/NHibernate.dll": {
             "assemblyVersion": "5.4.0.0",
             "fileVersion": "5.4.0.0"
+          }
+        }
+      },
+      "NHibernate.ByteCode.Castle/3.3.3.4000": {
+        "dependencies": {
+          "Castle.Core": "5.1.0",
+          "NHibernate": "5.4.0"
+        },
+        "runtime": {
+          "lib/net35/NHibernate.ByteCode.Castle.dll": {
+            "assemblyVersion": "3.3.3.4000",
+            "fileVersion": "3.3.3.4000"
           }
         }
       },
@@ -379,6 +427,7 @@
           "System.Threading": "4.3.0"
         }
       },
+      "System.Diagnostics.EventLog/6.0.0": {},
       "System.Diagnostics.Tools/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -985,8 +1034,12 @@
       "AgendaSala.Database/1.0.0": {
         "dependencies": {
           "AgendaSala.Domain": "1.0.0",
+          "Castle.Core": "5.1.0",
+          "Castle.DynamicProxy.dll": "1.1.5",
           "FluentNHibernate": "3.1.0",
+          "LinFu.DynamicProxy": "2.1.2",
           "NHibernate": "5.4.0",
+          "NHibernate.ByteCode.Castle": "3.3.3.4000",
           "Npgsql": "7.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
@@ -996,8 +1049,12 @@
       },
       "AgendaSala.Domain/1.0.0": {
         "dependencies": {
+          "Castle.Core": "5.1.0",
+          "Castle.DynamicProxy.dll": "1.1.5",
           "FluentNHibernate": "3.1.0",
+          "LinFu.DynamicProxy": "2.1.2",
           "NHibernate": "5.4.0",
+          "NHibernate.ByteCode.Castle": "3.3.3.4000",
           "Npgsql": "7.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
@@ -1020,6 +1077,20 @@
       "path": "antlr3.runtime/3.5.1",
       "hashPath": "antlr3.runtime.3.5.1.nupkg.sha512"
     },
+    "Castle.Core/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-31UJpTHOiWq95CDOHazE3Ub/hE/PydNWsJMwnEVTqFFP4WhAugwpaVGxzOxKgNeSUUeqS2W6lxV+q7u1pAOfXg==",
+      "path": "castle.core/5.1.0",
+      "hashPath": "castle.core.5.1.0.nupkg.sha512"
+    },
+    "Castle.DynamicProxy.dll/1.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-htDsjC/U+3jTfVimowhPqFkPNgIB9LFT77jEXHotpjA21dtWg76NZMTfI/Dwn++LclaGXDat/ghy7DrKbxgppA==",
+      "path": "castle.dynamicproxy.dll/1.1.5",
+      "hashPath": "castle.dynamicproxy.dll.1.1.5.nupkg.sha512"
+    },
     "FluentNHibernate/3.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1033,6 +1104,13 @@
       "sha512": "sha512-jlebSjv2a7amYfKXEUsPDSf2Yi9r0/FkvvT6Dy7ehl7z8du+dTGqKDu+fYbnE+WuIz/v3prYm1jpBljMrY1p+Q==",
       "path": "iesi.collections/4.0.4",
       "hashPath": "iesi.collections.4.0.4.nupkg.sha512"
+    },
+    "LinFu.DynamicProxy/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D+LFDhjzD/r5TIJfXpfbUxMHXncgPuasnaZbaCOZ9gTvWgkW6w8OdfzASFFsPw5KEDgC+HhZa5A5yuRESdTL9w==",
+      "path": "linfu.dynamicproxy/2.1.2",
+      "hashPath": "linfu.dynamicproxy.2.1.2.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
       "type": "package",
@@ -1089,6 +1167,13 @@
       "sha512": "sha512-PtkfoxAxrjLhsY78aYZYzGWnWi1AKC7iJZF+4g6Y9fnmbIX0lL+jxlasaFgm1A68envFKQHK5Kc5V+LnD5La9w==",
       "path": "nhibernate/5.4.0",
       "hashPath": "nhibernate.5.4.0.nupkg.sha512"
+    },
+    "NHibernate.ByteCode.Castle/3.3.3.4000": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gsuVGtHvHeLERI8ONDLzdjwgH5X++WGKjevtpl0twEr2gg4QK1a85IUBqQgKtn/QlCfJaPk4h4k6TtvkDgT9Mw==",
+      "path": "nhibernate.bytecode.castle/3.3.3.4000",
+      "hashPath": "nhibernate.bytecode.castle.3.3.3.4000.nupkg.sha512"
     },
     "Npgsql/7.0.0": {
       "type": "package",
@@ -1313,6 +1398,13 @@
       "sha512": "sha512-tD6kosZnTAGdrEa0tZSuFyunMbt/5KYDnHdndJYGqZoNy00XVXyACd5d6KnE1YgYv3ne2CjtAfNXo/fwEhnKUA==",
       "path": "system.diagnostics.diagnosticsource/4.3.0",
       "hashPath": "system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "hashPath": "system.diagnostics.eventlog.6.0.0.nupkg.sha512"
     },
     "System.Diagnostics.Tools/4.3.0": {
       "type": "package",

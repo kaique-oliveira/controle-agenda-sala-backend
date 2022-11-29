@@ -1,9 +1,9 @@
 ﻿using AgendaSala.Database.Interface;
-using AgendaSala.Domain.Entities;
+using AgendaSala.Domain.Entidades;
 
 namespace AgendaSala.Database.Repositories
 {
-    public class RoleRepository : BaseRepository<Role>, IRoleRepository
+    public class RoleRepository : BaseRepository<Setor>, IRoleCrud
     {
         public RoleRepository(INpgSqlConnection connection) : base(connection)
         {
