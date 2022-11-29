@@ -1,15 +1,21 @@
-﻿using AgendaSala.Database.Connection;
-using AgendaSala.Database.Interface;
+﻿using AgendaSala.Database.Interface;
 using NHibernate;
 
 namespace AgendaSala.Database.Repositories
 {
-    public class BaseRepository<T> : ICrudDal<T> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
+        private readonly INpgSqlConnection _connection;
+
+        public BaseRepository(INpgSqlConnection connection)
+        {
+            _connection = connection;
+        }
+
         public void Delete(T entity)
         {
             //open session
-            using (ISession _session = NhibernateConnection.Open())
+            using (ISession _session = _connection.Open())
             {
                 //open transaction
                 using (ITransaction _transaction = _session.BeginTransaction())
@@ -38,7 +44,7 @@ namespace AgendaSala.Database.Repositories
         {
             //not use transaction
             //open session
-            using (ISession _session = NhibernateConnection.Open())
+            using (ISession _session = _connection.Open())
             {
                 return (from res in _session.Query<T>() select res).ToList();
             }
@@ -48,7 +54,7 @@ namespace AgendaSala.Database.Repositories
         {
             //not use transaction
             //open session
-            using (ISession _session = NhibernateConnection.Open())
+            using (ISession _session = _connection.Open())
             {
                 return _session.Get<T>(id);
             }
@@ -57,7 +63,7 @@ namespace AgendaSala.Database.Repositories
         public void Insert(T entity)
         {
             //open session
-            using (ISession _session = NhibernateConnection.Open())
+            using (ISession _session = _connection.Open())
             {
                 //open transaction
                 using (ITransaction _transaction = _session.BeginTransaction())
@@ -85,7 +91,7 @@ namespace AgendaSala.Database.Repositories
         public void Update(T entity)
         {
             //open session
-            using (ISession _session = NhibernateConnection.Open())
+            using (ISession _session = _connection.Open())
             {
                 //open transaction
                 using (ITransaction _transaction = _session.BeginTransaction())

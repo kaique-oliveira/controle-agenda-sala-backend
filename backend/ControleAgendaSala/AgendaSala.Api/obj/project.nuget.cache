@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pgGVV3+MFhxVJz5gFT40jxxg+NqO3pmKDRYwctN53ubKKZ/3Ye5jZyFwlyXiJMzszJNW4uYls6npteTCHZSVVA==",
+  "dgSpecHash": "p3oGst2/THtjEkc0yJBTlUBM8OKP+hGJV59KKYc5VjSKEI83mJkTWCm0Tvakh1fNty65R1cVecEQ4F3ansxxXw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
+  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Interfocus\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\Interfocus\\.nuget\\packages\\fluentnhibernate\\3.1.0\\fluentnhibernate.3.1.0.nupkg.sha512",

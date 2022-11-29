@@ -1771,6 +1771,39 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "AgendaSala.Database/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AgendaSala.Domain": "1.0.0",
+          "FluentNHibernate": "3.1.0",
+          "NHibernate": "5.4.0",
+          "Npgsql": "7.0.0",
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/AgendaSala.Database.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AgendaSala.Database.dll": {}
+        }
+      },
+      "AgendaSala.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentNHibernate": "3.1.0",
+          "NHibernate": "5.4.0",
+          "Npgsql": "7.0.0",
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/AgendaSala.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AgendaSala.Domain.dll": {}
+        }
       }
     }
   },
@@ -5907,10 +5940,22 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "AgendaSala.Database/1.0.0": {
+      "type": "project",
+      "path": "../AgendaSala.Database/AgendaSala.Database.csproj",
+      "msbuildProject": "../AgendaSala.Database/AgendaSala.Database.csproj"
+    },
+    "AgendaSala.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AgendaSala.Domain/AgendaSala.Domain.csproj",
+      "msbuildProject": "../AgendaSala.Domain/AgendaSala.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AgendaSala.Database >= 1.0.0",
+      "AgendaSala.Domain >= 1.0.0",
       "FluentNHibernate >= 3.1.0",
       "NHibernate >= 5.4.0",
       "Npgsql >= 7.0.0",
@@ -5923,11 +5968,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
       "projectName": "AgendaSala.Api",
-      "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
+      "projectPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
       "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\ControleAgendaSala\\AgendaSala.Api\\obj\\",
+      "outputPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5943,7 +5988,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj": {
+              "projectPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj"
+            },
+            "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
+              "projectPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

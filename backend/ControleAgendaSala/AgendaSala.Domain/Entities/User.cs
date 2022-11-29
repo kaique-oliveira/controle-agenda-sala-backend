@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
-
 namespace AgendaSala.Domain.Entities
 {
     public class User
@@ -14,3 +13,4 @@ namespace AgendaSala.Domain.Entities
 
     }
 }
+

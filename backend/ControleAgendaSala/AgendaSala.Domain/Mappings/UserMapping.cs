@@ -1,5 +1,6 @@
 ﻿using AgendaSala.Domain.Entities;
 using FluentNHibernate.Mapping;
+using NHibernate.Linq;
 
 namespace AgendaSala.Domain.Mappings
 {
@@ -14,8 +15,11 @@ namespace AgendaSala.Domain.Mappings
             Map(u => u.Email).Not.Nullable();
             Map(u => u.Password).Not.Nullable();
 
-            References(u => u.Role, "RoleId");
-
+            References(u => u.Role)
+            .Column("RoleId")
+            .ForeignKey("fk_RoleUser")
+            .Index("idx_fk_RoleUser")
+            ;
         }
     }
 }
