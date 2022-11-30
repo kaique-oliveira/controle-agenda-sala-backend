@@ -21,10 +21,25 @@ namespace AgendaSala.Api.Controllers
         [Route("inserir")]
         public async Task<ActionResult<dynamic>> InserirSetor([FromBody] Setor _setor)
         {
-
             _servicoCrudSetor.Inserir(_setor);
 
             return Ok(201);
+        }
+
+        [HttpGet]
+        [Route("buscar/{id}")]
+        public async Task<ActionResult<dynamic>> buscarSetorPorId([FromRoute] int id)
+        {
+            return _servicoCrudSetor.BuscarPorId(id);
+
+        }
+
+        [HttpGet]
+        [Route("buscar")]
+        public async Task<ActionResult<dynamic>> buscarTodosSetores()
+        {
+            return _servicoCrudSetor.BuscarTodos().ToList();
+
         }
     }
 }

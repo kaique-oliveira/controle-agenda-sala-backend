@@ -20,10 +20,25 @@ namespace AgendaSala.Api.Controllers
         [Route("inserir")]
         public async Task<ActionResult<dynamic>> InserirSala([FromBody] Sala _sala)
         {
-
             _servicoCrudSala.Inserir(_sala);
 
             return Ok(201);
+        }
+
+        [HttpGet]
+        [Route("buscar/{id}")]
+        public async Task<ActionResult<dynamic>> buscarSalaPorId([FromRoute] int id)
+        {
+            return _servicoCrudSala.BuscarPorId(id);
+
+        }
+
+        [HttpGet]
+        [Route("buscar")]
+        public async Task<ActionResult<dynamic>> buscarTodasSala()
+        {
+            return _servicoCrudSala.BuscarTodos().ToList();
+
         }
     }
 }
