@@ -1,37 +1,37 @@
-﻿using AgendaSala.Database.Interface;
+﻿using AgendaSala.Database.Interfaces;
 using NHibernate;
 
-namespace AgendaSala.Database.Repositories
+namespace AgendaSala.Database.ServicosCrud
 {
-    public class BaseRepository<T> : IBaseCrud<T> where T : class
+    public class CrudBase<T> : ICrudBase<T> where T : class
     {
-        private readonly INpgSqlConnection _connection;
+        private readonly IConexao _conexao;
 
-        public BaseRepository(INpgSqlConnection connection)
+        public CrudBase(IConexao conexao)
         {
-            _connection = connection;
+            _conexao = conexao;
         }
 
-        public void Delete(T entity)
+        public void Deletar(T entity)
         {
             //open session
-            using (ISession _session = _connection.Open())
+            using (ISession _sessao = _conexao.Abrir())
             {
                 //open transaction
-                using (ITransaction _transaction = _session.BeginTransaction())
+                using (ITransaction _transacao = _sessao.BeginTransaction())
                 {
                     try
                     {
                         //save session
-                        _session.Delete(entity);
+                        _sessao.Delete(entity);
                         //commit database
-                        _transaction.Commit();
+                        _transacao.Commit();
                     }
                     catch (Exception ex)
                     {
-                        if (!_transaction.WasCommitted)
+                        if (!_transacao.WasCommitted)
                         {
-                            _transaction.Rollback();
+                            _transacao.Rollback();
                             throw new Exception($"Erro ao deletar: {ex}");
                         }
                     }
@@ -40,46 +40,46 @@ namespace AgendaSala.Database.Repositories
             }
         }
 
-        public IList<T> FindAll()
+        public IList<T> BuscarTodos()
         {
             //not use transaction
             //open session
-            using (ISession _session = _connection.Open())
+            using (ISession _sessao = _conexao.Abrir())
             {
-                return (from res in _session.Query<T>() select res).ToList();
+                return (from res in _sessao.Query<T>() select res).ToList();
             }
         }
 
-        public T FindId(int id)
+        public T BuscarPorId(int id)
         {
             //not use transaction
             //open session
-            using (ISession _session = _connection.Open())
+            using (ISession _sessao = _conexao.Abrir())
             {
-                return _session.Get<T>(id);
+                return _sessao.Get<T>(id);
             }
         }
 
-        public void Insert(T entity)
+        public void Inserir(T entity)
         {
             //open session
-            using (ISession _session = _connection.Open())
+            using (ISession _sessao = _conexao.Abrir())
             {
                 //open transaction
-                using (ITransaction _transaction = _session.BeginTransaction())
+                using (ITransaction _transacao = _sessao.BeginTransaction())
                 {
                     try
                     {
                         //save session
-                        _session.Save(entity);
+                        _sessao.Save(entity);
                         //commit database
-                        _transaction.Commit();
+                        _transacao.Commit();
                     }
                     catch (Exception ex)
                     {
-                        if (!_transaction.WasCommitted)
+                        if (!_transacao.WasCommitted)
                         {
-                            _transaction.Rollback();
+                            _transacao.Rollback();
                             throw new Exception($"Erro ao salvar: {ex}");
                         }
                     }
@@ -88,26 +88,26 @@ namespace AgendaSala.Database.Repositories
             }
         }
 
-        public void Update(T entity)
+        public void Atualizar(T entity)
         {
             //open session
-            using (ISession _session = _connection.Open())
+            using (ISession _sessao = _conexao.Abrir())
             {
                 //open transaction
-                using (ITransaction _transaction = _session.BeginTransaction())
+                using (ITransaction _transacao = _sessao.BeginTransaction())
                 {
                     try
                     {
                         //save session
-                        _session.Update(entity);
+                        _sessao.Update(entity);
                         //commit database
-                        _transaction.Commit();
+                        _transacao.Commit();
                     }
                     catch (Exception ex)
                     {
-                        if (!_transaction.WasCommitted)
+                        if (!_transacao.WasCommitted)
                         {
-                            _transaction.Rollback();
+                            _transacao.Rollback();
                             throw new Exception($"Erro ao atualizar: {ex}");
                         }
                     }
