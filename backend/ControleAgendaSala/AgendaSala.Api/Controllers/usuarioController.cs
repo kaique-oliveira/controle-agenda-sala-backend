@@ -16,29 +16,104 @@ namespace AgendaSala.Api.Controllers
             _servicoCrudUsuario = servicoCrudUsuario;
         }
 
+
+
         [HttpPost]
         [Route("inserir")]
         public async Task<ActionResult<dynamic>> InserirUsuario([FromBody] Usuario _usuario)
         {
-            _servicoCrudUsuario.Inserir(_usuario);
-            
-            return Ok(201);
+            try
+            {
+                _servicoCrudUsuario.Inserir(_usuario);
+
+                return Ok( "Usuário cadastrado com sucesso!" );
+            }
+            catch (Exception ex)
+            {
+                return BadRequest( $"erro interno no servidor: {ex}" );
+            }
         }
+
 
         [HttpGet]
         [Route("buscar/{id}")]
         public async Task<ActionResult<dynamic>> buscarUsuarioPorId([FromRoute] int id)
         {
-            return  _servicoCrudUsuario.BuscarPorId(id);
+            try
+            {
+                var _usuario = _servicoCrudUsuario.BuscarPorId(id);
 
+                if (_usuario == null)
+                {
+                    return BadRequest( "Usuário informado não encontrado!" );
+                }
+
+                return Ok(_usuario);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest( $"erro interno no servidor: {ex}" );
+            }
         }
+
 
         [HttpGet]
         [Route("buscar")]
         public async Task<ActionResult<dynamic>> buscarTodosUsuarios()
         {
-            return  _servicoCrudUsuario.BuscarTodos().ToList();
+            try
+            {
+                return _servicoCrudUsuario.BuscarTodos().ToList();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest( $"erro interno no servidor: {ex}" );
+            }
+        }
 
+
+        [HttpPut]
+        [Route("atualizar")]
+        public async Task<ActionResult<dynamic>> AtualizarUsuario([FromBody] Usuario _usuario)
+        {
+
+            try
+            {
+                if (buscarUsuarioPorId(_usuario.Id) == null)
+                {
+                    return BadRequest( "Usuário informado não encontrado!" );
+                }
+
+                _servicoCrudUsuario.Atualizar(_usuario);
+
+                return Ok( "Usuário atualizado com sucesso!" );
+            }
+            catch (Exception ex)
+            {
+                return BadRequest( $"erro interno no servidor: {ex}" );
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("deletar")]
+        public async Task<ActionResult<dynamic>> DeletarUsuario([FromBody] Usuario _usuario)
+        {
+            try
+            {
+                if (buscarUsuarioPorId(_usuario.Id) == null)
+                {
+                    return BadRequest( "Usuário informado não encontrado!" );
+                }
+
+                _servicoCrudUsuario.Deletar(_usuario);
+
+                return Ok( "Usuário deletado com sucesso!" );
+            }
+            catch (Exception ex)
+            {
+                return BadRequest( $"erro interno no servidor: {ex}" );
+            }
         }
     }
 }

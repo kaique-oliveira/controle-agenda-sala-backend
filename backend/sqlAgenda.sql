@@ -14,7 +14,7 @@ CREATE TABLE tbl_Usuario(
  nome varchar(150) NOT NULL, 
  email varchar(150) NOT NULL, 
  senha varchar(10) NOT NULL,
- tipo_Usuario varchar(15) NOT NULL, 
+func_ou_admin boolean NOT NULL, 
  idSetor int NOT NULL,
  FOREIGN KEY (idSetor) REFERENCES tbl_Setor (Id)
 );

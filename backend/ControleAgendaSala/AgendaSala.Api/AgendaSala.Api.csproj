@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AgendaSala.Database\AgendaSala.Database.csproj" />
     <ProjectReference Include="..\AgendaSala.Domain\AgendaSala.Domain.csproj" />
+    <ProjectReference Include="..\AgendaSala.Services\AgendaSala.Services.csproj" />
   </ItemGroup>
 
 </Project>

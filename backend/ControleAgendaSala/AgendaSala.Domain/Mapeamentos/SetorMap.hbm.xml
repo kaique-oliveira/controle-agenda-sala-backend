@@ -4,7 +4,7 @@
 
 	<class name="Setor" lazy="false" table="tbl_setor" >
 		<id name="Id" column="id" type="int">
-			<generator class="native"/>
+			<generator class="increment" />
 		</id>
 
 		<property name="Nome"	column="nome"	type="string" length="150" />

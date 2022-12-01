@@ -1,4 +1,4 @@
-﻿using AgendaSala.Domain.Enum;
+﻿
 using System.ComponentModel.DataAnnotations;
 
 

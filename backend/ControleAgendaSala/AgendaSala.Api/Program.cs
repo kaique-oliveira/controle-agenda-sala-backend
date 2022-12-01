@@ -1,6 +1,8 @@
 using AgendaSala.Database.Conexao;
 using AgendaSala.Database.Interfaces;
 using AgendaSala.Database.ServicosCrud;
+using AgendaSala.Services.Interfaces;
+using AgendaSala.Services.Servicos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,7 @@ builder.Services.AddScoped<ICrudAgendamento, CrudAgendamento>();
 builder.Services.AddScoped<ICrudSetor,  CrudSetor>();
 builder.Services.AddScoped<ICrudSala,  CrudSala>();
 builder.Services.AddScoped<ICrudUsuario,  CrudUsuario>();
+builder.Services.AddScoped<IServicoValidarAgendamento, ServicoValidarAgendamento>();
 
 
 

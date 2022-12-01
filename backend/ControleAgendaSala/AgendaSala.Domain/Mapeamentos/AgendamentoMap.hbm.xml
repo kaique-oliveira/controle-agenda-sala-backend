@@ -4,7 +4,7 @@
 
 	<class name="Agendamento" lazy="false" table="tbl_agendamento" >
 		<id name="Id" column="id" type="int">
-			<generator class="native" />
+			<generator class="increment" />
 		</id>
 
 		<property name="DataAgendamento"	column="data_agendamento"	type="date" />

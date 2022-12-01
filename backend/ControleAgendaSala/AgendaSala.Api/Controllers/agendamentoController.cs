@@ -3,6 +3,7 @@ using AgendaSala.Domain.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 using System;
+using AgendaSala.Services.Interfaces;
 
 namespace AgendaSala.Api.Controllers
 {
@@ -12,10 +13,12 @@ namespace AgendaSala.Api.Controllers
     public class agendamentoController : ControllerBase
     {
         private readonly ICrudAgendamento _servicoCrudAgendamento;
+        private readonly IServicoValidarAgendamento _servicoValidarAgendamento;
 
-        public agendamentoController(ICrudAgendamento servicoCrudAgendamento)
+        public agendamentoController(ICrudAgendamento servicoCrudAgendamento, IServicoValidarAgendamento servicoValidarAgendamento)
         {
             _servicoCrudAgendamento = servicoCrudAgendamento;
+            _servicoValidarAgendamento = servicoValidarAgendamento;
         }
 
 
@@ -23,55 +26,101 @@ namespace AgendaSala.Api.Controllers
         [Route("inserir")]
         public async Task<ActionResult<dynamic>> InserirAgendamento([FromBody] Agendamento _agendamento)
         {
-            _servicoCrudAgendamento.Inserir(_agendamento);
+            try
+            {
+                if (_servicoValidarAgendamento.CompararAgendamentos(_agendamento) == false)
+                {
+                    return BadRequest("agendamento iguais");
+                }
+                _servicoCrudAgendamento.Inserir(_agendamento);
 
-            return Ok(201);
+                return Ok("Agendamento cadastrado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
         }
+
 
         [HttpGet]
         [Route("buscar/{id}")]
         public async Task<ActionResult<dynamic>> buscarAgendamentoPorId([FromRoute] int id)
         {
-            return   _servicoCrudAgendamento.BuscarPorId(id);
+            try
+            {
+                var _agendamento = _servicoCrudAgendamento.BuscarPorId(id);
 
+                if (_agendamento == null)
+                {
+                    return BadRequest("agendamento informado não encontrado!");
+                }
+
+                return Ok(_agendamento);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
         }
+
 
         [HttpGet]
         [Route("buscar")]
         public async Task<ActionResult<dynamic>> buscarTodasAgendamento()
         {
-            return   _servicoCrudAgendamento.BuscarTodos().ToList();
-
+            try
+            {
+                return _servicoCrudAgendamento.BuscarTodos().ToList();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
         }
+
 
         [HttpPut]
         [Route("atualizar")]
         public async Task<ActionResult<dynamic>> AtualizarAgendamento([FromBody] Agendamento _agendamento)
         {
-
-            if (buscarAgendamentoPorId(_agendamento.Id) == null)
+            try
             {
-                return BadRequest(new { statusCode = 404, message = "agendamento não existe." });
+                if (buscarAgendamentoPorId(_agendamento.Id) == null)
+                {
+                    return BadRequest("Agendamento informado não encontrado!");
+                }
+
+                _servicoCrudAgendamento.Atualizar(_agendamento);
+
+                return Ok("Agendamento atualizado com sucesso!");
             }
-
-            _servicoCrudAgendamento.Atualizar(_agendamento);
-
-            return Ok(201);
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
         }
+
 
         [HttpDelete]
         [Route("deletar")]
         public async Task<ActionResult<dynamic>> DeletarAgendamento([FromBody] Agendamento _agendamento)
         {
-
-            if (buscarAgendamentoPorId(_agendamento.Id) == null)
+            try
             {
-                return BadRequest(new { statusCode = 404, message = "agendamento não existe." });
+                if (buscarAgendamentoPorId(_agendamento.Id) == null)
+                {
+                    return BadRequest("Agendamento informado não encontrado!");
+                }
+
+                _servicoCrudAgendamento.Deletar(_agendamento);
+
+                return Ok("Agendamento deletado com sucesso!");
             }
-
-            _servicoCrudAgendamento.Deletar(_agendamento);
-
-            return Ok(201);
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
         }
     }
 }

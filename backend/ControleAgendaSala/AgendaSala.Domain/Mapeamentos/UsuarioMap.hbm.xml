@@ -5,13 +5,13 @@
 	<class name="Usuario" lazy="false" table="tbl_usuario" >
 		
 		<id name="Id" column="id" type="int">
-			<generator class="native" />
+			<generator class="increment" />
 		</id>
 
-		<property name="Nome"			column="nome"		 type="string" length="150" />
-		<property name="Email"			column="email"		 type="string" length="150" />
-		<property name="Senha"			column="senha"		 type="string" length="10" />
-		<property name="TipoUsuario"	column="tipo_usuario" type="string" length="15" />
+		<property name="Nome"			column="nome"			type="string" length="150" />
+		<property name="Email"			column="email"			type="string" length="150" />
+		<property name="Senha"			column="senha"			type="string" length="10" />
+		<property name="FucOuAdmin"		column="func_ou_admin"	 type="bool" />
 
 		<many-to-one name="Setor"
 					 class="Setor"

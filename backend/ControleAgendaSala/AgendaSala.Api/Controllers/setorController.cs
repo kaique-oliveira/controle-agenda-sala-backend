@@ -21,25 +21,97 @@ namespace AgendaSala.Api.Controllers
         [Route("inserir")]
         public async Task<ActionResult<dynamic>> InserirSetor([FromBody] Setor _setor)
         {
-            _servicoCrudSetor.Inserir(_setor);
+            try
+            {
+                _servicoCrudSetor.Inserir(_setor);
 
-            return Ok(201);
+                return Ok(new {message = "Setor cadastrado com sucesso!" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest( $"erro interno no servidor: {ex}" );
+            }
         }
+
 
         [HttpGet]
         [Route("buscar/{id}")]
         public async Task<ActionResult<dynamic>> buscarSetorPorId([FromRoute] int id)
         {
-            return _servicoCrudSetor.BuscarPorId(id);
+            try
+            {
+                var _setor = _servicoCrudSetor.BuscarPorId(id);
 
+                if (_setor == null)
+                {
+                    return BadRequest("Setor informado não encontrado!");
+                }
+
+                return Ok(_setor);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
         }
+
 
         [HttpGet]
         [Route("buscar")]
         public async Task<ActionResult<dynamic>> buscarTodosSetores()
         {
-            return _servicoCrudSetor.BuscarTodos().ToList();
+            try
+            {
+                return _servicoCrudSetor.BuscarTodos().ToList();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
 
+        }
+
+        [HttpPut]
+        [Route("atualizar")]
+        public async Task<ActionResult<dynamic>> AtualizarSetor([FromBody] Setor _setor)
+        {
+            try
+            {
+                if (buscarSetorPorId(_setor.Id) == null)
+                {
+                    return BadRequest("Setor informado não encontrado!");
+                }
+
+                _servicoCrudSetor.Atualizar(_setor);
+
+                return Ok( "Setor atualizado com sucesso!" );
+                }
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("deletar")]
+        public async Task<ActionResult<dynamic>> DeletarSetor([FromBody] Setor _setor)
+        {
+            try
+            {
+                if (buscarSetorPorId(_setor.Id) == null)
+                {
+                    return BadRequest( "Setor informado não encontrado!" );
+                }
+
+                _servicoCrudSetor.Deletar(_setor);
+
+                return Ok( "Setor deletado com sucesso!" );
+                }
+            catch (Exception ex)
+            {
+                return BadRequest($"erro interno no servidor: {ex}");
+            }
         }
     }
 }
