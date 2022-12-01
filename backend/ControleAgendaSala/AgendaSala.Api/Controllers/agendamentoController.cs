@@ -1,9 +1,7 @@
 ﻿using AgendaSala.Database.Interfaces;
 using AgendaSala.Domain.Entidades;
 using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
-using System;
-using AgendaSala.Services.Interfaces;
+using AgendaSala.Domain.Interfaces;
 
 namespace AgendaSala.Api.Controllers
 {
@@ -28,9 +26,9 @@ namespace AgendaSala.Api.Controllers
         {
             try
             {
-                if (_servicoValidarAgendamento.CompararAgendamentos(_agendamento) == false)
+                if (_servicoValidarAgendamento.CompararAgendamentos(_agendamento, _servicoCrudAgendamento.BuscarTodos()) == false)
                 {
-                    return BadRequest("agendamento iguais");
+                    return BadRequest("Horário indisponivel!");
                 }
                 _servicoCrudAgendamento.Inserir(_agendamento);
 
@@ -89,6 +87,11 @@ namespace AgendaSala.Api.Controllers
                 if (buscarAgendamentoPorId(_agendamento.Id) == null)
                 {
                     return BadRequest("Agendamento informado não encontrado!");
+                }
+
+                if (_servicoValidarAgendamento.CompararAgendamentos(_agendamento, _servicoCrudAgendamento.BuscarTodos()) == false)
+                {
+                    return BadRequest("Horário indisponivel!");
                 }
 
                 _servicoCrudAgendamento.Atualizar(_agendamento);

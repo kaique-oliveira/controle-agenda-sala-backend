@@ -1,23 +1,16 @@
-﻿using AgendaSala.Database.Interfaces;
-using AgendaSala.Domain.Entidades;
-using AgendaSala.Services.Interfaces;
+﻿using AgendaSala.Domain.Entidades;
+using AgendaSala.Domain.Interfaces;
 
 
-namespace AgendaSala.Services.Servicos
+namespace AgendaSala.Domain.Servicos
 {
     public class ServicoValidarAgendamento : IServicoValidarAgendamento
     {
-        private readonly ICrudAgendamento _crudAgendamento;
 
-        public ServicoValidarAgendamento(ICrudAgendamento crudAgendamento)
-        {
-            _crudAgendamento = crudAgendamento;
-        }
-
-        public bool CompararAgendamentos(Agendamento agendamento)
+        public bool CompararAgendamentos(Agendamento agendamento, IList<Agendamento> listaAgendamento)
         {
 
-            var _agendamentos = _crudAgendamento.BuscarTodos()
+            var _agendamentos = listaAgendamento
                 .Where(a => 
                 a.DataAgendamento.Date == agendamento.DataAgendamento.Date
                 && agendamento.HoraInicial.TimeOfDay >=  a.HoraInicial.TimeOfDay

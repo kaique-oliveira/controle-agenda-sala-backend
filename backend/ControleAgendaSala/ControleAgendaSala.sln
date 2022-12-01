@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgendaSala.Api", "AgendaSal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgendaSala.Auth", "AgendaSala.Auth\AgendaSala.Auth.csproj", "{4E82E159-F99D-4EDD-9C19-787F40A8D294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaSala.Services", "AgendaSala.Services\AgendaSala.Services.csproj", "{C31B974A-4E67-40A2-A97B-C4CC844EF663}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{4E82E159-F99D-4EDD-9C19-787F40A8D294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E82E159-F99D-4EDD-9C19-787F40A8D294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E82E159-F99D-4EDD-9C19-787F40A8D294}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C31B974A-4E67-40A2-A97B-C4CC844EF663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C31B974A-4E67-40A2-A97B-C4CC844EF663}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C31B974A-4E67-40A2-A97B-C4CC844EF663}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C31B974A-4E67-40A2-A97B-C4CC844EF663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

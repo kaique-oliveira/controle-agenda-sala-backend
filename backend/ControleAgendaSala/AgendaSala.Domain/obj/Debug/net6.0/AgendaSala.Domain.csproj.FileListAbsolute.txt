@@ -11,3 +11,16 @@ C:\Users\kaique\Desktop\projects\controle-agenda-sala\controle-agenda-sala\backe
 C:\Users\kaique\Desktop\projects\controle-agenda-sala\controle-agenda-sala\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\refint\AgendaSala.Domain.dll
 C:\Users\kaique\Desktop\projects\controle-agenda-sala\controle-agenda-sala\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.pdb
 C:\Users\kaique\Desktop\projects\controle-agenda-sala\controle-agenda-sala\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\ref\AgendaSala.Domain.dll
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\bin\Debug\net6.0\AgendaSala.Domain.dll.config
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\bin\Debug\net6.0\AgendaSala.Domain.deps.json
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\bin\Debug\net6.0\AgendaSala.Domain.dll
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\bin\Debug\net6.0\AgendaSala.Domain.pdb
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.csproj.AssemblyReference.cache
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.AssemblyInfoInputs.cache
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.AssemblyInfo.cs
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.dll
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\refint\AgendaSala.Domain.dll
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\AgendaSala.Domain.pdb
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Domain\obj\Debug\net6.0\ref\AgendaSala.Domain.dll

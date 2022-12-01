@@ -10,7 +10,6 @@
         "dependencies": {
           "AgendaSala.Database": "1.0.0",
           "AgendaSala.Domain": "1.0.0",
-          "AgendaSala.Services": "1.0.0",
           "Castle.Core": "5.1.0",
           "Castle.DynamicProxy.dll": "1.1.5",
           "FluentNHibernate": "3.1.0",
@@ -1112,15 +1111,6 @@
         "runtime": {
           "AgendaSala.Domain.dll": {}
         }
-      },
-      "AgendaSala.Services/1.0.0": {
-        "dependencies": {
-          "AgendaSala.Database": "1.0.0",
-          "AgendaSala.Domain": "1.0.0"
-        },
-        "runtime": {
-          "AgendaSala.Services.dll": {}
-        }
       }
     }
   },
@@ -1906,11 +1896,6 @@
       "sha512": ""
     },
     "AgendaSala.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "AgendaSala.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

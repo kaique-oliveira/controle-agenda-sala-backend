@@ -1,8 +1,8 @@
 using AgendaSala.Database.Conexao;
 using AgendaSala.Database.Interfaces;
 using AgendaSala.Database.ServicosCrud;
-using AgendaSala.Services.Interfaces;
-using AgendaSala.Services.Servicos;
+using AgendaSala.Domain.Interfaces;
+using AgendaSala.Domain.Servicos;
 
 var builder = WebApplication.CreateBuilder(args);
 
