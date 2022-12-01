@@ -1,5 +1,6 @@
 ﻿using AgendaSala.Database.Interfaces;
 using AgendaSala.Domain.Entidades;
+using AgendaSala.Auth.Servicos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaSala.Api.Controllers
@@ -24,6 +25,9 @@ namespace AgendaSala.Api.Controllers
         {
             try
             {
+                //criptografa a senha do usuário
+                _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
+
                 _servicoCrudUsuario.Inserir(_usuario);
 
                 return Ok( "Usuário cadastrado com sucesso!" );
@@ -47,6 +51,7 @@ namespace AgendaSala.Api.Controllers
                 {
                     return BadRequest( "Usuário informado não encontrado!" );
                 }
+
 
                 return Ok(_usuario);
             }
@@ -83,6 +88,8 @@ namespace AgendaSala.Api.Controllers
                 {
                     return BadRequest( "Usuário informado não encontrado!" );
                 }
+
+                _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
 
                 _servicoCrudUsuario.Atualizar(_usuario);
 

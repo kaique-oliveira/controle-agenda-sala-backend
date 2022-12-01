@@ -13,7 +13,7 @@ CREATE TABLE tbl_Usuario(
  Id serial CONSTRAINT pk_id_Usuario PRIMARY KEY,
  nome varchar(150) NOT NULL, 
  email varchar(150) NOT NULL, 
- senha varchar(10) NOT NULL,
+ senha varchar(255) NOT NULL,
 func_ou_admin boolean NOT NULL, 
  idSetor int NOT NULL,
  FOREIGN KEY (idSetor) REFERENCES tbl_Setor (Id)
@@ -30,3 +30,5 @@ CREATE TABLE tbl_Agendamento(
  FOREIGN KEY (idSala) REFERENCES tbl_Sala (Id),
  FOREIGN KEY (idUsuario) REFERENCES tbl_Usuario (Id)
 );
+
+ALTER TABLE nome_da_tabela ALTER COLUMN nome_da_coluna TYPE varchar(512)

@@ -1,0 +1,12 @@
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\bin\Debug\net6.0\AgendaSala.Auth.deps.json
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\bin\Debug\net6.0\AgendaSala.Auth.dll
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\bin\Debug\net6.0\AgendaSala.Auth.pdb
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.csproj.AssemblyReference.cache
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.AssemblyInfoInputs.cache
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.AssemblyInfo.cs
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.csproj.CoreCompileInputs.cache
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.dll
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\refint\AgendaSala.Auth.dll
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.pdb
+C:\Users\Interfocus\Desktop\kaique\projects\controle-agenda-sala\master\backend\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\ref\AgendaSala.Auth.dll
