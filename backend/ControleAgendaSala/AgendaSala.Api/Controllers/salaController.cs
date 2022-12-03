@@ -1,5 +1,6 @@
 ﻿using AgendaSala.Database.Interfaces;
 using AgendaSala.Domain.Entidades;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaSala.Api.Controllers
@@ -59,6 +60,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpGet]
         [Route("buscar")]
+        [Authorize("admin")]
         public async Task<ActionResult<dynamic>> buscarTodasSala()
         {
             try

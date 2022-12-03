@@ -6540,19 +6540,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Interfocus\\.nuget\\packages\\": {}
+    "C:\\Users\\kaique\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\master\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
+      "projectUniqueName": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
       "projectName": "AgendaSala.Database",
-      "projectPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\master\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
-      "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\master\\backend\\ControleAgendaSala\\AgendaSala.Database\\obj\\",
+      "projectPath": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
+      "packagesPath": "C:\\Users\\kaique\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6566,8 +6571,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\master\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
-              "projectPath": "C:\\Users\\Interfocus\\Desktop\\kaique\\projects\\controle-agenda-sala\\master\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
+            "C:\\Users\\kaique\\Desktop\\controle-agenda-sala\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
+              "projectPath": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala\\controle-agenda-sala\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
             }
           }
         }
@@ -6635,7 +6640,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

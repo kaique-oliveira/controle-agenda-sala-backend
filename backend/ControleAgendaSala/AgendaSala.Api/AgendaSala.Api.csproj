@@ -11,6 +11,7 @@
     <PackageReference Include="Castle.DynamicProxy.dll" Version="1.1.5" />
     <PackageReference Include="FluentNHibernate" Version="3.1.0" />
     <PackageReference Include="LinFu.DynamicProxy" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
     <PackageReference Include="NHibernate" Version="5.4.0" />
     <PackageReference Include="NHibernate.ByteCode.Castle" Version="3.3.3.4000" />
     <PackageReference Include="Npgsql" Version="7.0.0" />

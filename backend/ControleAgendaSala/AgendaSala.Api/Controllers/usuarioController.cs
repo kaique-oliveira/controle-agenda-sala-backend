@@ -2,6 +2,7 @@
 using AgendaSala.Domain.Entidades;
 using AgendaSala.Auth.Servicos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AgendaSala.Api.Controllers
 {
@@ -21,6 +22,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPost]
         [Route("inserir")]
+        [AllowAnonymous]
         public async Task<ActionResult<dynamic>> InserirUsuario([FromBody] Usuario _usuario)
         {
             try

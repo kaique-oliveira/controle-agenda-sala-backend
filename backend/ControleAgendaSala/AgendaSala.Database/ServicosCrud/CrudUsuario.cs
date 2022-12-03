@@ -1,5 +1,6 @@
 ﻿using AgendaSala.Database.Interfaces;
 using AgendaSala.Domain.Entidades;
+using Microsoft.AspNetCore.Http;
 
 namespace AgendaSala.Database.ServicosCrud
 {
@@ -8,5 +9,6 @@ namespace AgendaSala.Database.ServicosCrud
         public CrudUsuario(IConexao conexao) : base(conexao)
         {
         }
+
     }
 }
