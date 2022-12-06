@@ -15,7 +15,7 @@
 		<many-to-one name="Sala"
 					 class="Sala"
 					 column="idSala"
-					 fetch="join"
+					 fetch="join" 
 					 foreign-key="tbl_agendamento_idsala_fkey"/>
 
 		<many-to-one name="Usuario"

@@ -1,6 +1,7 @@
 ﻿using AgendaSala.Database.Interfaces;
 using AgendaSala.Database.ServicosCrud;
 using AgendaSala.Domain.Entidades;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaSala.Api.Controllers
@@ -19,6 +20,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPost]
         [Route("inserir")]
+        [AllowAnonymous]
         public async Task<ActionResult<dynamic>> InserirSetor([FromBody] Setor _setor)
         {
             try
