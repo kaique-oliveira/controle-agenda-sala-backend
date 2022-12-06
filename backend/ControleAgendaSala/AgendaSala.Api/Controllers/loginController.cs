@@ -1,4 +1,5 @@
-﻿using AgendaSala.Auth.Servicos;
+﻿using AgendaSala.Api.Controllers.FormatosAPI;
+using AgendaSala.Auth.Servicos;
 using AgendaSala.Database.Interfaces;
 using AgendaSala.Domain.Entidades;
 using Microsoft.AspNetCore.Authorization;
@@ -38,13 +39,13 @@ namespace AgendaSala.Api.Controllers
             }
 
             var token = AuthToken.GerarToken(_usuario);
+            retornoUsuario usuario = new retornoUsuario(_usuario.Nome, _usuario.Email, _usuario.Tipo);
 
             return new
             {
-                usuario = _usuario.Nome,
-                setor = _usuario.Setor,
-                tipo = _usuario.Tipo,
-                token = token
+                token = token,
+                usuario = usuario,
+                
             };
         }
     }

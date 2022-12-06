@@ -20,10 +20,10 @@ namespace AgendaSala.Auth.Servicos
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim("id", usuario.Id.ToString()),
-                    new Claim("usuário", usuario.Nome),
+
+                    new Claim("nome", usuario.Nome),
+                    new Claim("email", usuario.Email),
                     new Claim("tipo", usuario.Tipo),
-                    new Claim("setor", usuario.Setor.Nome),
 
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),

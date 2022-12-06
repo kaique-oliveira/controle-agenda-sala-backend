@@ -16,6 +16,8 @@ builder.Services.AddScoped<ICrudSala,  CrudSala>();
 builder.Services.AddScoped<ICrudUsuario,  CrudUsuario>();
 builder.Services.AddScoped<IServicoValidarAgendamento, ServicoValidarAgendamento>();
 
+
+
 builder.Services.ConfigurarToken();
 builder.Services.ConfigurarAutorizacoes();
 builder.Services.ConfigurarCors();
@@ -39,6 +41,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
