@@ -15,10 +15,11 @@ namespace AgendaSala.Domain.Servicos
                 a.DataAgendamento.Date == agendamento.DataAgendamento.Date
                 && agendamento.HoraInicial.TimeOfDay >=  a.HoraInicial.TimeOfDay
                 && agendamento.HoraFinal.TimeOfDay <= a.HoraFinal.TimeOfDay
-                || agendamento.HoraFinal.TimeOfDay >= a.HoraFinal.TimeOfDay 
 
                 || agendamento.HoraInicial.TimeOfDay < a.HoraInicial.TimeOfDay
                 && agendamento.HoraFinal.TimeOfDay >  a.HoraInicial.TimeOfDay
+
+                //|| agendamento.HoraFinal.TimeOfDay >= a.HoraFinal.TimeOfDay
                 ).ToList();
 
 

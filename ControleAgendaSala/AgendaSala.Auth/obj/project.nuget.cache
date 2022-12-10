@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mMQNn/dpFy2N/vSUiKs+0URD2PcAPP/c8wGr5gtIC+LKmW7xf6x7HaMXmG2Ca6iyCYmyOyU8ghsun4lQsej7+w==",
+  "dgSpecHash": "uUX1ej2hPB0cgOqxorXaO+hMNqcH+/Ii45EUGfoDpKPwVBgitTuJLKPfHaE68+7PEYKBCl89/7hb2mkQ36m2uA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Auth\\AgendaSala.Auth.csproj",
+  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Auth\\AgendaSala.Auth.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Interfocus\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\Interfocus\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",

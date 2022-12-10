@@ -45,6 +45,7 @@ namespace AgendaSala.Api.Controllers
                 token = token,
                 usuario = new
                 {
+                    id = _usuario.Id,
                     nome = _usuario.Nome,
                     email = _usuario.Email,
                     tipo = _usuario.Tipo,
@@ -65,6 +66,7 @@ namespace AgendaSala.Api.Controllers
                 token = token.Token,
                 usuario = new
                 {
+                    id = _token.Payload.First(x => x.Key == "id").Value,
                     nome = _token.Payload.First(x => x.Key == "nome").Value,
                     email = _token.Payload.First(x => x.Key == "email").Value,
                     tipo = _token.Payload.First(x => x.Key == "tipo").Value,

@@ -7744,11 +7744,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
       "projectName": "AgendaSala.Api",
-      "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
+      "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Api\\AgendaSala.Api.csproj",
       "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Api\\obj\\",
+      "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7765,14 +7765,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Auth\\AgendaSala.Auth.csproj": {
-              "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Auth\\AgendaSala.Auth.csproj"
+            "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Auth\\AgendaSala.Auth.csproj": {
+              "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Auth\\AgendaSala.Auth.csproj"
             },
-            "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj": {
-              "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj"
+            "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj": {
+              "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj"
             },
-            "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
-              "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
+            "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
+              "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
             }
           }
         }

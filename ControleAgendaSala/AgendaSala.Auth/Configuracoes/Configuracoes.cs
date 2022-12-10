@@ -41,8 +41,8 @@ namespace AgendaSala.Auth.Configuracoes
         {
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("usuario", policy => policy.RequireClaim("tipo", "usuario"));
-                options.AddPolicy("admin", policy => policy.RequireClaim("tipo", "admin"));
+                options.AddPolicy("Usuario", policy => policy.RequireClaim("tipo", "Asuario"));
+                options.AddPolicy("Admin", policy => policy.RequireClaim("tipo", "Admin"));
             });
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D1MwvG2VVUp3x3Ab9qSNuc+UDhQ+q/gsgtrQt4fUnMAq822mhdEflBEcdYJBpPihNvXAIZQjEypkJTLjzx5w/w==",
+  "dgSpecHash": "rLCaqk+ffC8oHHusm0EyvoLiPuusSRyVJ5LPPGRkdl6lM10z4ZPdnFwqiGAnFTz9OYV5CGQisxQFex8r0AjyzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala\\backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-api\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Interfocus\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\Interfocus\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",

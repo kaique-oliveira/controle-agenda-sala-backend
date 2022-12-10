@@ -2,6 +2,7 @@
 using AgendaSala.Domain.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using AgendaSala.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AgendaSala.Api.Controllers
 {
@@ -22,6 +23,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPost]
         [Route("inserir")]
+        [Authorize("Admin")]
         public async Task<ActionResult<dynamic>> InserirAgendamento([FromBody] Agendamento _agendamento)
         {
             try
@@ -43,6 +45,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpGet]
         [Route("buscar/{id}")]
+        [Authorize]
         public async Task<ActionResult<dynamic>> buscarAgendamentoPorId([FromRoute] int id)
         {
             try
@@ -65,6 +68,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpGet]
         [Route("buscar")]
+        [Authorize("Admin")]
         public async Task<ActionResult<dynamic>> buscarTodasAgendamento()
         {
             try
@@ -107,6 +111,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpDelete]
         [Route("deletar")]
+        [Authorize("Admin, Usuario")]
         public async Task<ActionResult<dynamic>> DeletarAgendamento([FromBody] Agendamento _agendamento)
         {
             try
