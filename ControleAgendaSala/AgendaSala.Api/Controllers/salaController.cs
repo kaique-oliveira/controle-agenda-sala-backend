@@ -20,6 +20,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPost]
         [Route("inserir")]
+        [Authorize("Admin")]
         public async Task<ActionResult<dynamic>> InserirSala([FromBody] Sala _sala)
         {
             try

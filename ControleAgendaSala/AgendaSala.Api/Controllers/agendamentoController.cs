@@ -3,6 +3,7 @@ using AgendaSala.Domain.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using AgendaSala.Domain.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using AgendaSala.Api.Models;
 
 namespace AgendaSala.Api.Controllers
 {
@@ -12,22 +13,42 @@ namespace AgendaSala.Api.Controllers
     public class agendamentoController : ControllerBase
     {
         private readonly ICrudAgendamento _servicoCrudAgendamento;
+        private readonly ICrudSala _servicoCrudSala;
+        private readonly ICrudUsuario _servicoCrudUsuario;
         private readonly IServicoValidarAgendamento _servicoValidarAgendamento;
+        private readonly IServicoCalcularHoraFinal _servicoCalcularHoraFinal;
 
-        public agendamentoController(ICrudAgendamento servicoCrudAgendamento, IServicoValidarAgendamento servicoValidarAgendamento)
+        public agendamentoController(
+            ICrudAgendamento servicoCrudAgendamento, 
+            IServicoValidarAgendamento servicoValidarAgendamento,
+            IServicoCalcularHoraFinal servicoCalcularHoraFinal,
+            ICrudSala servicoCrudSala,
+            ICrudUsuario servicoCrudUsuario)
         {
             _servicoCrudAgendamento = servicoCrudAgendamento;
             _servicoValidarAgendamento = servicoValidarAgendamento;
+            _servicoCalcularHoraFinal = servicoCalcularHoraFinal;
+            _servicoCrudSala = servicoCrudSala;
+            _servicoCrudUsuario = servicoCrudUsuario;
         }
 
 
         [HttpPost]
         [Route("inserir")]
         [Authorize("Admin")]
-        public async Task<ActionResult<dynamic>> InserirAgendamento([FromBody] Agendamento _agendamento)
+        public async Task<ActionResult<dynamic>> InserirAgendamento([FromBody] CadastroAgendamento cadastroAgendamento)
         {
             try
             {
+                Agendamento _agendamento = new Agendamento();
+                _agendamento.DataAgendamento = cadastroAgendamento.DataAgendamento;
+                _agendamento.HoraInicial = cadastroAgendamento.HoraInicial.ToLocalTime();
+                _agendamento.Duracao = cadastroAgendamento.Duracao.ToLocalTime();
+                _agendamento.HoraFinal = _servicoCalcularHoraFinal.CalcularHora(_agendamento.HoraInicial, _agendamento.Duracao);                
+                _agendamento.Sala = _servicoCrudSala.BuscarPorId(cadastroAgendamento.IdSala);
+                _agendamento.Usuario = _servicoCrudUsuario.BuscarPorId(cadastroAgendamento.IdUsuario);
+
+
                 if (_servicoValidarAgendamento.CompararAgendamentos(_agendamento, _servicoCrudAgendamento.BuscarTodos()) == false)
                 {
                     return BadRequest("Horário indisponivel!");
@@ -66,14 +87,21 @@ namespace AgendaSala.Api.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("buscar")]
         [Authorize("Admin")]
-        public async Task<ActionResult<dynamic>> buscarTodasAgendamento()
+        public async Task<ActionResult<dynamic>> buscarTodasAgendamento(FiltroAgendamentos filtro)
         {
             try
             {
-                return _servicoCrudAgendamento.BuscarTodos().ToList();
+                var _agendamentos = _servicoCrudAgendamento.BuscarTodos()
+                    .Where(a => 
+                        a.DataAgendamento.Date == DateTime.Parse(filtro.Data).Date 
+                        && a.Sala.Id == filtro.IdSala)
+                    .OrderBy(a => a.HoraInicial)
+                    .ToList();
+
+                return _agendamentos;
             }
             catch (Exception ex)
             {
@@ -110,13 +138,15 @@ namespace AgendaSala.Api.Controllers
 
 
         [HttpDelete]
-        [Route("deletar")]
-        [Authorize("Admin, Usuario")]
-        public async Task<ActionResult<dynamic>> DeletarAgendamento([FromBody] Agendamento _agendamento)
+        [Route("deletar/{id}")]
+        [Authorize("Admin")]
+        public async Task<ActionResult<dynamic>> DeletarAgendamento([FromRoute] int id)
         {
             try
             {
-                if (buscarAgendamentoPorId(_agendamento.Id) == null)
+                Agendamento _agendamento = _servicoCrudAgendamento.BuscarPorId(id);
+
+                if (_agendamento == null)
                 {
                     return BadRequest("Agendamento informado não encontrado!");
                 }

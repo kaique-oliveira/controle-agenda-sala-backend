@@ -15,6 +15,7 @@ builder.Services.AddScoped<ICrudSetor,  CrudSetor>();
 builder.Services.AddScoped<ICrudSala,  CrudSala>();
 builder.Services.AddScoped<ICrudUsuario,  CrudUsuario>();
 builder.Services.AddScoped<IServicoValidarAgendamento, ServicoValidarAgendamento>();
+builder.Services.AddScoped<IServicoCalcularHoraFinal, ServicoCalcularHoraFinal>();
 
 
 
