@@ -4,15 +4,23 @@ using System.Security.Claims;
 using System.Text;
 using AgendaSala.Domain.Entidades;
 using Microsoft.Extensions.Configuration;
-
-
+using AgendaSala.Auth.Interfaces;
 
 namespace AgendaSala.Auth.Servicos
 {
-    public static class AuthToken
+    public class AuthToken : IAuthToken
     {
-        
-        public static string GerarToken(Usuario usuario)
+        private readonly IConfigurationRoot configuration;
+        public AuthToken()
+        {
+            configuration =  new ConfigurationBuilder()
+              .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+              .AddJsonFile("appsettings.json")
+              .Build();
+
+        }
+
+        public string GerarToken(Usuario usuario)
         {
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -28,14 +36,14 @@ namespace AgendaSala.Auth.Servicos
 
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(pegarSecret()), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["KeySecret:Secret"])), SecurityAlgorithms.HmacSha256Signature)
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
 
-        public static JwtSecurityToken lerToken(Tokenn token)
+        public JwtSecurityToken lerToken(ModelToken token)
         {
             var jwt = token.Token;
             var handler = new JwtSecurityTokenHandler();
@@ -45,16 +53,17 @@ namespace AgendaSala.Auth.Servicos
         }
 
 
-        private static byte[] pegarSecret()
-        {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-              .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-              .AddJsonFile("appsettings.json")
-              .Build();
+        //private byte[] pegarSecret()
+        //{
+        //    IConfigurationRoot configuration = new ConfigurationBuilder()
+        //      .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+        //      .AddJsonFile("appsettings.json")
+        //      .Build();
 
-            byte[] key = Encoding.ASCII.GetBytes(configuration["KeySecret:Secret"]);
+        //    byte[] key = Encoding.ASCII.GetBytes(configuration["KeySecret:Secret"]);
 
-            return key;
-        }
+        //    return key;
+        //}
+
     }
 }

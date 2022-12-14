@@ -4,11 +4,8 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AgendaSala.Auth.Configuracoes
 {
@@ -41,7 +38,7 @@ namespace AgendaSala.Auth.Configuracoes
         {
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Usuario", policy => policy.RequireClaim("tipo", "Asuario"));
+                options.AddPolicy("Usuario", policy => policy.RequireClaim("tipo", "Usuario"));
                 options.AddPolicy("Admin", policy => policy.RequireClaim("tipo", "Admin"));
             });
         }
@@ -73,6 +70,8 @@ namespace AgendaSala.Auth.Configuracoes
 
             return key;
         }
+
+       
 
     }
 }

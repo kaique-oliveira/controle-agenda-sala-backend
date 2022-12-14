@@ -35,7 +35,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPost]
         [Route("inserir")]
-        [Authorize("Admin")]
+        [Authorize]
         public async Task<ActionResult<dynamic>> InserirAgendamento([FromBody] CadastroAgendamento cadastroAgendamento)
         {
             try
@@ -89,7 +89,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPost]
         [Route("buscar")]
-        [Authorize("Admin")]
+        [Authorize]
         public async Task<ActionResult<dynamic>> buscarTodasAgendamento(FiltroAgendamentos filtro)
         {
             try
@@ -139,7 +139,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpDelete]
         [Route("deletar/{id}")]
-        [Authorize("Admin")]
+        [Authorize]
         public async Task<ActionResult<dynamic>> DeletarAgendamento([FromRoute] int id)
         {
             try

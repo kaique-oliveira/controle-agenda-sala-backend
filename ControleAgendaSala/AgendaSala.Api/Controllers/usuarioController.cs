@@ -27,6 +27,10 @@ namespace AgendaSala.Api.Controllers
         {
             try
             {
+                if(_servicoCrudUsuario.BuscarTodos().Where(u => u.Email == _usuario.Email).ToList().Count > 0)
+                {
+                    return BadRequest("E-mail informado já está sendo usado!");
+                }
                 //criptografa a senha do usuário
                 _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
 

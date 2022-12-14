@@ -42,8 +42,6 @@ namespace AgendaSala.Database.ServicosCrud
 
         public IList<T> BuscarTodos()
         {
-            //not use transaction
-            //open session
             using (ISession _sessao = _conexao.Abrir())
             {
                 return (from res in _sessao.Query<T>() select res).ToList();

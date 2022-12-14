@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AgendaSala.Database\AgendaSala.Database.csproj" />
     <ProjectReference Include="..\AgendaSala.Domain\AgendaSala.Domain.csproj" />
   </ItemGroup>
 

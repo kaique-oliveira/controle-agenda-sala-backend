@@ -30,3 +30,5 @@ C:\Users\Interfocus\Desktop\controle-agenda-sala-api\ControleAgendaSala\AgendaSa
 C:\Users\Interfocus\Desktop\controle-agenda-sala-api\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\refint\AgendaSala.Auth.dll
 C:\Users\Interfocus\Desktop\controle-agenda-sala-api\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\AgendaSala.Auth.pdb
 C:\Users\Interfocus\Desktop\controle-agenda-sala-api\ControleAgendaSala\AgendaSala.Auth\obj\Debug\net6.0\ref\AgendaSala.Auth.dll
+C:\Users\Interfocus\Desktop\controle-agenda-sala-api\ControleAgendaSala\AgendaSala.Auth\bin\Debug\net6.0\AgendaSala.Database.dll
+C:\Users\Interfocus\Desktop\controle-agenda-sala-api\ControleAgendaSala\AgendaSala.Auth\bin\Debug\net6.0\AgendaSala.Database.pdb

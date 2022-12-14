@@ -1,4 +1,6 @@
 ﻿
+using AgendaSala.Auth;
+using AgendaSala.Auth.Interfaces;
 using AgendaSala.Auth.Servicos;
 using AgendaSala.Database.Interfaces;
 using AgendaSala.Domain.Entidades;
@@ -14,10 +16,12 @@ namespace AgendaSala.Api.Controllers
     public class loginController : ControllerBase
     {
         private readonly ICrudUsuario _servicoCrudUsuario;
+        private readonly IAuthToken _servicoAuthToken;
 
-        public loginController(ICrudUsuario servicoCrudUsuario)
+        public loginController(ICrudUsuario servicoCrudUsuario, IAuthToken servicoAuthToken )
         {
             _servicoCrudUsuario = servicoCrudUsuario;
+            _servicoAuthToken = servicoAuthToken;
         }
 
         [HttpPost]
@@ -38,7 +42,7 @@ namespace AgendaSala.Api.Controllers
                 return BadRequest( "Senha informada está incorreta!");
             }
 
-            var token = AuthToken.GerarToken(_usuario);
+            var token = _servicoAuthToken.GerarToken(_usuario);
 
             return new
             {
@@ -57,9 +61,9 @@ namespace AgendaSala.Api.Controllers
         [HttpPost]
         [Route("validartoken")]
         [AllowAnonymous]
-        public async Task<ActionResult<dynamic>> ValidarToken([FromBody] Tokenn token)
+        public async Task<ActionResult<dynamic>> ValidarToken([FromBody] ModelToken token)
         {
-            var _token = AuthToken.lerToken(token);
+            var _token = _servicoAuthToken.lerToken(token);
 
             return new
             {
