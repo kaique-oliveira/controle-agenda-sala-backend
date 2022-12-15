@@ -61,7 +61,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpGet]
         [Route("buscar")]
-        [Authorize("Admin")]
+        [Authorize]
         public async Task<ActionResult<dynamic>> buscarTodasSala()
         {
             try

@@ -20,7 +20,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPost]
         [Route("inserir")]
-        [AllowAnonymous]
+        [Authorize("admin")]
         public async Task<ActionResult<dynamic>> InserirSetor([FromBody] Setor _setor)
         {
             try
@@ -60,11 +60,12 @@ namespace AgendaSala.Api.Controllers
 
         [HttpGet]
         [Route("buscar")]
+        [AllowAnonymous]
         public async Task<ActionResult<dynamic>> buscarTodosSetores()
         {
             try
             {
-                return _servicoCrudSetor.BuscarTodos().ToList();
+                return _servicoCrudSetor.BuscarTodos().OrderBy(s => s.Nome).ToList();
             }
             catch (Exception ex)
             {

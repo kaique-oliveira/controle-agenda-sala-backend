@@ -32,4 +32,3 @@ CREATE TABLE tbl_Agendamento(
  FOREIGN KEY (idUsuario) REFERENCES tbl_Usuario (Id)
 );
 
-ALTER TABLE nome_da_tabela ALTER COLUMN nome_da_coluna TYPE varchar(512)
