@@ -66,7 +66,7 @@ namespace AgendaSala.Api.Controllers
         {
             try
             {
-                return _servicoCrudSala.BuscarTodos().ToList();
+                return _servicoCrudSala.BuscarTodos().OrderByDescending(s => s.Nome).ToList();
             } 
             catch (Exception ex)
             {
