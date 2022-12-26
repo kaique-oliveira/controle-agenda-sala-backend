@@ -12,10 +12,12 @@ namespace AgendaSala.Api.Controllers
     public class usuarioController : ControllerBase
     {
         private readonly ICrudUsuario _servicoCrudUsuario;
+        private readonly ICrudAgendamento _servicoCrudAgendamento;
 
-        public usuarioController(ICrudUsuario servicoCrudUsuario)
+        public usuarioController(ICrudUsuario servicoCrudUsuario, ICrudAgendamento servicoCrudAgendamento)
         {
             _servicoCrudUsuario = servicoCrudUsuario;
+            _servicoCrudAgendamento = servicoCrudAgendamento;
         }
 
 
@@ -47,6 +49,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpGet]
         [Route("buscar/{id}")]
+        [Authorize]
         public async Task<ActionResult<dynamic>> buscarUsuarioPorId([FromRoute] int id)
         {
             try
@@ -70,11 +73,12 @@ namespace AgendaSala.Api.Controllers
 
         [HttpGet]
         [Route("buscar")]
+        [Authorize("admin")]
         public async Task<ActionResult<dynamic>> buscarTodosUsuarios()
         {
             try
             {
-                return _servicoCrudUsuario.BuscarTodos().ToList();
+                return _servicoCrudUsuario.BuscarTodos().OrderBy(u => u.Nome).ToList();
             }
             catch (Exception ex)
             {
@@ -85,17 +89,23 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPut]
         [Route("atualizar")]
+        [Authorize("admin")]
         public async Task<ActionResult<dynamic>> AtualizarUsuario([FromBody] Usuario _usuario)
         {
 
             try
             {
-                if (buscarUsuarioPorId(_usuario.Id) == null)
+                var usuarioConsultado =  _servicoCrudUsuario.BuscarPorId(_usuario.Id);
+                if (usuarioConsultado == null)
                 {
                     return BadRequest( "Usuário informado não encontrado!" );
                 }
 
-                _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
+                if(usuarioConsultado.Senha != _usuario.Senha)
+                {
+                    _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
+                }
+
 
                 _servicoCrudUsuario.Atualizar(_usuario);
 
@@ -109,16 +119,26 @@ namespace AgendaSala.Api.Controllers
 
 
         [HttpDelete]
-        [Route("deletar")]
-        public async Task<ActionResult<dynamic>> DeletarUsuario([FromBody] Usuario _usuario)
+        [Route("deletar/{id}")]
+        [Authorize("admin")]
+        public async Task<ActionResult<dynamic>> DeletarUsuario([FromRoute] int id)
         {
             try
             {
-                if (buscarUsuarioPorId(_usuario.Id) == null)
+                var _usuario =  _servicoCrudUsuario.BuscarPorId(id);
+
+                if (_usuario == null)
                 {
                     return BadRequest( "Usuário informado não encontrado!" );
                 }
 
+                var agendamentos =  _servicoCrudAgendamento.BuscarTodos().Where(a => a.Usuario.Id == id).ToList();
+
+                foreach (var agendamento in agendamentos)
+                {
+                    _servicoCrudAgendamento.Deletar(agendamento);
+                }
+               
                 _servicoCrudUsuario.Deletar(_usuario);
 
                 return Ok( "Usuário deletado com sucesso!" );
