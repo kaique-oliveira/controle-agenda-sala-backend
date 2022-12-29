@@ -41,6 +41,7 @@ namespace AgendaSala.Api.Controllers
             try
             {
                 Agendamento _agendamento = new Agendamento();
+                _agendamento.Titulo = cadastroAgendamento.Titulo;
                 _agendamento.DataAgendamento = cadastroAgendamento.DataAgendamento;
                 _agendamento.HoraInicial = cadastroAgendamento.HoraInicial.ToLocalTime();
                 _agendamento.Duracao = cadastroAgendamento.Duracao.ToLocalTime();

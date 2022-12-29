@@ -5,6 +5,7 @@ namespace AgendaSala.Api.Models
     public class CadastroAgendamento
     {
         public int Id { get; set; }
+        public string Titulo { get; set; }
         public DateTime DataAgendamento { get; set; }
         public DateTime HoraInicial { get; set; }
         public DateTime Duracao { get; set; }

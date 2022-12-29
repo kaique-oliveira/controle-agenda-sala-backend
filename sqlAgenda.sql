@@ -32,3 +32,5 @@ CREATE TABLE tbl_Agendamento(
  FOREIGN KEY (idUsuario) REFERENCES tbl_Usuario (Id)
 );
 
+ALTER TABLE tbl_Agendamento ADD COLUMN tipo varchar(150) NOT NULL;
+

@@ -66,7 +66,7 @@ namespace AgendaSala.Api.Controllers
         {
             try
             {
-                return _servicoCrudSala.BuscarTodos().OrderByDescending(s => s.Nome).ToList();
+                return _servicoCrudSala.BuscarTodos().OrderBy(s => s.Nome).ToList();
             } 
             catch (Exception ex)
             {
@@ -99,12 +99,14 @@ namespace AgendaSala.Api.Controllers
 
 
         [HttpDelete]
-        [Route("deletar")]
-        public async Task<ActionResult<dynamic>> DeletarSala([FromBody] Sala _sala)
+        [Route("deletar/{id}")]
+        public async Task<ActionResult<dynamic>> DeletarSala([FromRoute] int id)
         {
             try
             {
-                if (buscarSalaPorId(_sala.Id) == null)
+                var _sala = _servicoCrudSala.BuscarPorId(id);
+
+                if (_sala == null)
                 {
                     return BadRequest( "Sala informado não encontrado!" );
                 }

@@ -27,7 +27,7 @@ namespace AgendaSala.Api.Controllers
             {
                 _servicoCrudSetor.Inserir(_setor);
 
-                return Ok(new {message = "Setor cadastrado com sucesso!" });
+                return Ok( "Setor cadastrado com sucesso!" );
             }
             catch (Exception ex)
             {
@@ -97,12 +97,14 @@ namespace AgendaSala.Api.Controllers
 
 
         [HttpDelete]
-        [Route("deletar")]
-        public async Task<ActionResult<dynamic>> DeletarSetor([FromBody] Setor _setor)
+        [Route("deletar/{id}")]
+        public async Task<ActionResult<dynamic>> DeletarSetor([FromRoute] int id)
         {
             try
             {
-                if (buscarSetorPorId(_setor.Id) == null)
+                var _setor = _servicoCrudSetor.BuscarPorId(id);
+
+                if (_setor == null)
                 {
                     return BadRequest( "Setor informado não encontrado!" );
                 }
@@ -110,7 +112,7 @@ namespace AgendaSala.Api.Controllers
                 _servicoCrudSetor.Deletar(_setor);
 
                 return Ok( "Setor deletado com sucesso!" );
-                }
+            }
             catch (Exception ex)
             {
                 return BadRequest($"erro interno no servidor: {ex}");

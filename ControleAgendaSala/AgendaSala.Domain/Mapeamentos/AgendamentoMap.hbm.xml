@@ -6,7 +6,8 @@
 		<id name="Id" column="id" type="int">
 			<generator class="increment" />
 		</id>
-
+		
+		<property name="Titulo"				column="titulo"				type="string" length="150" />
 		<property name="DataAgendamento"	column="data_agendamento"	type="date" />
 		<property name="HoraInicial"		column="hora_inicial"		type="time" />
 		<property name="HoraFinal"			column="hora_final"			type="time" />

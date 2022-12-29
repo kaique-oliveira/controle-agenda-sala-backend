@@ -6540,19 +6540,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Interfocus\\.nuget\\packages\\": {}
+    "C:\\Users\\kaique\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
+      "projectUniqueName": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
       "projectName": "AgendaSala.Database",
-      "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
-      "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Database\\obj\\",
+      "projectPath": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Database\\AgendaSala.Database.csproj",
+      "packagesPath": "C:\\Users\\kaique\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Database\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6566,8 +6571,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
-              "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
+            "C:\\Users\\kaique\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj": {
+              "projectPath": "C:\\Users\\kaique\\Desktop\\controle-agenda-sala-backend\\ControleAgendaSala\\AgendaSala.Domain\\AgendaSala.Domain.csproj"
             }
           }
         }
@@ -6635,7 +6640,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -6644,7 +6649,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: NHibernate.ByteCode.Castle 3.3.3.4000 requires NHibernate (>= 3.3.3 && < 3.3.4) but version NHibernate 5.4.0 was resolved.",
+      "message": "Versão detectada do pacote fora da restrição de dependência: NHibernate.ByteCode.Castle 3.3.3.4000 requer NHibernate (>= 3.3.3 && < 3.3.4), mas a versão NHibernate 5.4.0 foi resolvida.",
       "libraryId": "NHibernate",
       "targetGraphs": [
         "net6.0"
@@ -6654,7 +6659,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: NHibernate.ByteCode.Castle 3.3.3.4000 requires Castle.Core (>= 3.2.0 && < 3.3.0) but version Castle.Core 5.1.0 was resolved.",
+      "message": "Versão detectada do pacote fora da restrição de dependência: NHibernate.ByteCode.Castle 3.3.3.4000 requer Castle.Core (>= 3.2.0 && < 3.3.0), mas a versão Castle.Core 5.1.0 foi resolvida.",
       "libraryId": "Castle.Core",
       "targetGraphs": [
         "net6.0"
@@ -6664,7 +6669,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Castle.DynamicProxy.dll 1.1.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "O pacote 'Castle.DynamicProxy.dll 1.1.5' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Castle.DynamicProxy.dll",
       "targetGraphs": [
         "net6.0"
@@ -6674,7 +6679,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'NHibernate.ByteCode.Castle 3.3.3.4000' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "O pacote 'NHibernate.ByteCode.Castle 3.3.3.4000' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "NHibernate.ByteCode.Castle",
       "targetGraphs": [
         "net6.0"
