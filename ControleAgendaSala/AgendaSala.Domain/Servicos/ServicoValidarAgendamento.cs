@@ -13,7 +13,8 @@ namespace AgendaSala.Domain.Servicos
             var _agendamentos = listaAgendamento
                 .Where(a =>
                 agendamento.DataAgendamento.Date == a.DataAgendamento.Date
-                && agendamento.Sala.Id == a.Sala.Id ).ToList();
+                && agendamento.Sala.Id == a.Sala.Id 
+                && agendamento.Id != a.Id).ToList();
 
 
             if (_agendamentos.Count != 0) {

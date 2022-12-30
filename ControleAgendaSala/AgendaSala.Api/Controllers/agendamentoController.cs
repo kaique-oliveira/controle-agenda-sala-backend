@@ -113,21 +113,49 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPut]
         [Route("atualizar")]
-        public async Task<ActionResult<dynamic>> AtualizarAgendamento([FromBody] Agendamento _agendamento)
+        public async Task<ActionResult<dynamic>> AtualizarAgendamento([FromBody] CadastroAgendamento agendamentoEditado)
         {
             try
             {
-                if (buscarAgendamentoPorId(_agendamento.Id) == null)
+                var _agendamento = _servicoCrudAgendamento.BuscarPorId(agendamentoEditado.Id);     
+
+                if (_agendamento.Id == null)
                 {
                     return BadRequest("Agendamento informado não encontrado!");
                 }
 
-                if (_servicoValidarAgendamento.CompararAgendamentos(_agendamento, _servicoCrudAgendamento.BuscarTodos()) == false)
+                if (_agendamento.DataAgendamento.Date == agendamentoEditado.DataAgendamento.Date
+                    && _agendamento.Sala.Id == agendamentoEditado.IdSala
+                    && _agendamento.HoraInicial.TimeOfDay == agendamentoEditado.HoraInicial.ToLocalTime().TimeOfDay
+                    && _agendamento.Duracao.TimeOfDay == agendamentoEditado.Duracao.ToLocalTime().TimeOfDay)
                 {
-                    return BadRequest("Horário indisponivel!");
+                    _agendamento.Titulo = agendamentoEditado.Titulo;
+                    _agendamento.DataAgendamento = agendamentoEditado.DataAgendamento;
+                    _agendamento.HoraInicial = agendamentoEditado.HoraInicial.ToLocalTime();
+                    _agendamento.Duracao = agendamentoEditado.Duracao.ToLocalTime();
+                    _agendamento.HoraFinal = _servicoCalcularHoraFinal.CalcularHora(_agendamento.HoraInicial, _agendamento.Duracao);
+                    _agendamento.Sala = _servicoCrudSala.BuscarPorId(agendamentoEditado.IdSala);
+
+                    _servicoCrudAgendamento.Atualizar(_agendamento);
+                }
+                else
+                {
+
+                    if (_servicoValidarAgendamento.CompararAgendamentos(_agendamento, _servicoCrudAgendamento.BuscarTodos())  == false)
+                    {
+                        return BadRequest("Horário indisponivel!");
+                    }
+
+                    _agendamento.Titulo = agendamentoEditado.Titulo;
+                    _agendamento.DataAgendamento = agendamentoEditado.DataAgendamento;
+                    _agendamento.HoraInicial = agendamentoEditado.HoraInicial.ToLocalTime();
+                    _agendamento.Duracao = agendamentoEditado.Duracao.ToLocalTime();
+                    _agendamento.HoraFinal = _servicoCalcularHoraFinal.CalcularHora(_agendamento.HoraInicial, _agendamento.Duracao);
+                    _agendamento.Sala = _servicoCrudSala.BuscarPorId(agendamentoEditado.IdSala);
+
+                    _servicoCrudAgendamento.Atualizar(_agendamento);
                 }
 
-                _servicoCrudAgendamento.Atualizar(_agendamento);
 
                 return Ok("Agendamento atualizado com sucesso!");
             }
