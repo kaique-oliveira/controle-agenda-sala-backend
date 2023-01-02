@@ -89,7 +89,7 @@ namespace AgendaSala.Api.Controllers
 
         [HttpPut]
         [Route("atualizar")]
-        [Authorize("admin")]
+        [Authorize]
         public async Task<ActionResult<dynamic>> AtualizarUsuario([FromBody] Usuario _usuario)
         {
 
@@ -101,11 +101,12 @@ namespace AgendaSala.Api.Controllers
                     return BadRequest( "Usuário informado não encontrado!" );
                 }
 
-                if(usuarioConsultado.Senha != _usuario.Senha)
+                if(usuarioConsultado.Senha != _usuario.Senha && !string.IsNullOrEmpty(_usuario.Senha))
                 {
                     _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
                 }
 
+                _usuario.Senha = usuarioConsultado.Senha;
 
                 _servicoCrudUsuario.Atualizar(_usuario);
 

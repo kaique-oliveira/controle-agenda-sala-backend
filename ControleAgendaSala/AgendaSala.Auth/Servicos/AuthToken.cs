@@ -35,7 +35,7 @@ namespace AgendaSala.Auth.Servicos
                     new Claim("tipo", usuario.Tipo),
 
                 }),
-                Expires = DateTime.UtcNow.AddDays(1),
+                Expires = DateTime.Now.AddMinutes(5),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["KeySecret:Secret"])), SecurityAlgorithms.HmacSha256Signature)
             };
 
@@ -51,19 +51,6 @@ namespace AgendaSala.Auth.Servicos
 
             return _token;
         }
-
-
-        //private byte[] pegarSecret()
-        //{
-        //    IConfigurationRoot configuration = new ConfigurationBuilder()
-        //      .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-        //      .AddJsonFile("appsettings.json")
-        //      .Build();
-
-        //    byte[] key = Encoding.ASCII.GetBytes(configuration["KeySecret:Secret"]);
-
-        //    return key;
-        //}
 
     }
 }

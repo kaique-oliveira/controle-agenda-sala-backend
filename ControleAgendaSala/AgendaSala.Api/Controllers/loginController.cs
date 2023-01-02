@@ -53,6 +53,7 @@ namespace AgendaSala.Api.Controllers
                     nome = _usuario.Nome,
                     email = _usuario.Email,
                     tipo = _usuario.Tipo,
+                    setor = _usuario.Setor,
                 },
                 
             };
@@ -63,17 +64,30 @@ namespace AgendaSala.Api.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<dynamic>> ValidarToken([FromBody] ModelToken token)
         {
-            var _token = _servicoAuthToken.lerToken(token);
+            var tempoAtual = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            var _tokenRead = _servicoAuthToken.lerToken(token);
+            var _refreshToken = "";
+            var s = DateTime.UtcNow;
+
+            if (tempoAtual >= _tokenRead.Payload.Exp) {
+                int id = int.Parse(_tokenRead.Payload.First(x => x.Key == "id").Value.ToString());
+                Usuario? _usuario = _servicoCrudUsuario.BuscarPorId(id);
+                _refreshToken = _servicoAuthToken.GerarToken(_usuario);
+
+                token.Token = _refreshToken;
+                _tokenRead = _servicoAuthToken.lerToken(token);
+            }
+           
 
             return new
             {
                 token = token.Token,
                 usuario = new
                 {
-                    id = _token.Payload.First(x => x.Key == "id").Value,
-                    nome = _token.Payload.First(x => x.Key == "nome").Value,
-                    email = _token.Payload.First(x => x.Key == "email").Value,
-                    tipo = _token.Payload.First(x => x.Key == "tipo").Value,
+                    id = _tokenRead.Payload.First(x => x.Key == "id").Value,
+                    nome = _tokenRead.Payload.First(x => x.Key == "nome").Value,
+                    email = _tokenRead.Payload.First(x => x.Key == "email").Value,
+                    tipo = _tokenRead.Payload.First(x => x.Key == "tipo").Value,
                 },
 
             };
