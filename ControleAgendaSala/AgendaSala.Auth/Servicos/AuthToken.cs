@@ -34,7 +34,7 @@ namespace AgendaSala.Auth.Servicos
                     new Claim("tipo", usuario.Tipo),
 
                 }),
-                Expires = DateTime.Now.AddDays(50),
+                Expires = DateTime.Now.AddMinutes(46),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["KeySecret:Secret"])), SecurityAlgorithms.HmacSha256Signature)
             };
 

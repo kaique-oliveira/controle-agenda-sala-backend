@@ -33,6 +33,11 @@ namespace AgendaSala.Api.Controllers
                 {
                     return BadRequest("E-mail informado já está sendo usado!");
                 }
+
+                if (!_usuario.Email.Contains("@interfocus"))
+                {
+                    return BadRequest("por favor informe um e-mail interfocus!");
+                }
                 //criptografa a senha do usuário
                 _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
 
@@ -104,6 +109,11 @@ namespace AgendaSala.Api.Controllers
                 if(usuarioConsultado.Senha != _usuario.Senha && !string.IsNullOrEmpty(_usuario.Senha))
                 {
                     _usuario.Senha = AuthSenha.CriarHashSenha(_usuario.Senha);
+                }
+
+                if (!_usuario.Email.Contains("@interfocus"))
+                {
+                    return BadRequest("por favor informe um e-mail interfocus!");
                 }
 
                 _usuario.Senha = usuarioConsultado.Senha;

@@ -43,8 +43,8 @@ namespace AgendaSala.Api.Controllers
                 Agendamento _agendamento = new Agendamento();
                 _agendamento.Titulo = cadastroAgendamento.Titulo;
                 _agendamento.DataAgendamento = cadastroAgendamento.DataAgendamento;
-                _agendamento.HoraInicial = cadastroAgendamento.HoraInicial.ToLocalTime();
-                _agendamento.Duracao = cadastroAgendamento.Duracao.ToLocalTime();
+                _agendamento.HoraInicial = cadastroAgendamento.HoraInicial;
+                _agendamento.Duracao = cadastroAgendamento.Duracao;
                 _agendamento.HoraFinal = _servicoCalcularHoraFinal.CalcularHora(_agendamento.HoraInicial, _agendamento.Duracao);                
                 _agendamento.Sala = _servicoCrudSala.BuscarPorId(cadastroAgendamento.IdSala);
                 _agendamento.Usuario = _servicoCrudUsuario.BuscarPorId(cadastroAgendamento.IdUsuario);
@@ -126,13 +126,13 @@ namespace AgendaSala.Api.Controllers
 
                 if (_agendamento.DataAgendamento.Date == agendamentoEditado.DataAgendamento.Date
                     && _agendamento.Sala.Id == agendamentoEditado.IdSala
-                    && _agendamento.HoraInicial.TimeOfDay == agendamentoEditado.HoraInicial.ToLocalTime().TimeOfDay
-                    && _agendamento.Duracao.TimeOfDay == agendamentoEditado.Duracao.ToLocalTime().TimeOfDay)
+                    && _agendamento.HoraInicial.TimeOfDay == agendamentoEditado.HoraInicial.TimeOfDay
+                    && _agendamento.Duracao.TimeOfDay == agendamentoEditado.Duracao.TimeOfDay)
                 {
                     _agendamento.Titulo = agendamentoEditado.Titulo;
                     _agendamento.DataAgendamento = agendamentoEditado.DataAgendamento;
-                    _agendamento.HoraInicial = agendamentoEditado.HoraInicial.ToLocalTime();
-                    _agendamento.Duracao = agendamentoEditado.Duracao.ToLocalTime();
+                    _agendamento.HoraInicial = agendamentoEditado.HoraInicial;
+                    _agendamento.Duracao = agendamentoEditado.Duracao;
                     _agendamento.HoraFinal = _servicoCalcularHoraFinal.CalcularHora(_agendamento.HoraInicial, _agendamento.Duracao);
                     _agendamento.Sala = _servicoCrudSala.BuscarPorId(agendamentoEditado.IdSala);
 
@@ -148,8 +148,8 @@ namespace AgendaSala.Api.Controllers
 
                     _agendamento.Titulo = agendamentoEditado.Titulo;
                     _agendamento.DataAgendamento = agendamentoEditado.DataAgendamento;
-                    _agendamento.HoraInicial = agendamentoEditado.HoraInicial.ToLocalTime();
-                    _agendamento.Duracao = agendamentoEditado.Duracao.ToLocalTime();
+                    _agendamento.HoraInicial = agendamentoEditado.HoraInicial;
+                    _agendamento.Duracao = agendamentoEditado.Duracao;
                     _agendamento.HoraFinal = _servicoCalcularHoraFinal.CalcularHora(_agendamento.HoraInicial, _agendamento.Duracao);
                     _agendamento.Sala = _servicoCrudSala.BuscarPorId(agendamentoEditado.IdSala);
 

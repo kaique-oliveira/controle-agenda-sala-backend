@@ -32,6 +32,11 @@ namespace AgendaSala.Api.Controllers
             Usuario? _usuario = _servicoCrudUsuario.BuscarTodos()
                 .Where(u => u.Email == login.Email).FirstOrDefault();
 
+            if (!login.Email.Contains("@interfocus"))
+            {
+                return BadRequest("por favor informe um e-mail interfocus!");
+            }
+
             if (_usuario == null)
             {
                 return BadRequest( "Email informado não encontrado!"  );
